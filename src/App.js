@@ -1,6 +1,7 @@
-import logo from "./logo.svg";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Feed from "./components/Feed";
+
 import "./App.css";
 
 function App() {
@@ -25,23 +26,10 @@ function App() {
       });
   }, [state]);
 
-  console.log("TESTING AXIOS CALL", state.APODlist);
+  console.log("TESTING AXIOS CALL", state);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Feed APODlist={state.APODlist} count={state.count} />
     </div>
   );
 }
