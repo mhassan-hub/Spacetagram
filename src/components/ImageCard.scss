@@ -1,7 +1,13 @@
+@import "../styles/colors.scss";
 
 .image-card {
-  margin-left: 15px;
+  margin: 1rem;
   align-items: center;
-  width: 100%;
-  background-color: grey;
+  max-width: 24rem;
+  background-color: $grey;
+  padding: 2rem;
+}
+
+.space-image{
+  max-width: 24rem;
 }

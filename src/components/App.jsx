@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Feed from "./components/Feed";
+import Feed from "./Feed";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const [state, setState] = useState({
@@ -24,11 +24,24 @@ function App() {
       .catch((error) => {
         console.error("There is an error right here", error);
       });
-  }, [state]);
+  }, [state.count]);
+
+  const handleChange = (event)=>{
+    const value = Number(event.target.value);
+
+    if (value && typeof value === 'number') {
+      setState(()=>({...state, count: value
+      }))
+    } else {
+      console.error('please add a valid number')
+    }
+  }
 
   console.log("TESTING AXIOS CALL", state);
   return (
     <div className="App">
+      <h1 className="app-title">Spacetagram</h1>
+      <input aria-label='Count' type="text" className="feed-count" onChange={handleChange}/>
       <Feed APODlist={state.APODlist} count={state.count} />
     </div>
   );
