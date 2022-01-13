@@ -1,21 +1,41 @@
 @import "../styles/colors.scss";
 
 .image-card {
+  display: flex;
+  flex-direction: column;
   border-radius: 0.5rem;
   margin: 1rem;
   align-items: center;
+  height: 50rem;
   max-width: 32rem;
   background-color: $white;
 }
-.card-title{
+.title-section{
   margin-top: 0;
-  text-align: start;
-  
+  display: flex;
+  align-content: center;
+  justify-content: space-between;  
 }
-// .image-description {
-  
-//   text-align: start;
-// }
+
+.title-text{
+margin: 0;
+  font-size: 1rem;
+  text-align: start;
+}
+
+.date{
+  margin: 0;
+  color: $grey;
+}
+
+// need to fix description wrap issue
+.image-explanation {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
+  text-align: start;
+  height: 9rem;
+}
 
 .space-image{
   height: 32rem;
@@ -26,4 +46,7 @@
 
 .image-card-info {
   padding: 1.5rem;
+  border: 2px solid red;
+  flex-grow: 2;
+  border-radius: 0 0 0.5rem 0.5rem;
 }

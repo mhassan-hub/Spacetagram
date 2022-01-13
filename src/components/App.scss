@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+.count-question{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.feed-count{
+  margin: 0.75rem;
+  text-align: center;
+  max-width: 2rem;
+  
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

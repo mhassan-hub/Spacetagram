@@ -3,15 +3,19 @@ import axios from "axios";
 import Feed from "./Feed";
 
 import "./App.scss";
+import Loader from "./Loader";
 
 function App() {
+
   const [state, setState] = useState({
     count: 25,
     APODlist: [],
+    LOADING: true
   });
   const url = `https://api.nasa.gov/planetary/apod?&count=${state.count}&api_key=${process.env.REACT_APP_API_KEY}`;
 
   useEffect(() => {
+
     axios
       .get(url)
       .then((response) => {
@@ -19,6 +23,7 @@ function App() {
         setState({
           ...state,
           APODlist: response.data,
+          LOADING: false,
         });
       })
       .catch((error) => {
@@ -30,7 +35,7 @@ function App() {
     const value = Number(event.target.value);
 
     if (value && typeof value === 'number') {
-      setState(()=>({...state, count: value
+      setState(()=>({...state, count: value, LOADING:true,
       }))
     } else {
       console.error('please add a valid number')
@@ -40,13 +45,14 @@ function App() {
   console.log("TESTING AXIOS CALL", state);
   return (
     <div className="App">
-      <h1 className="app-title">Spacetagram <i class="fas fa-space-shuttle"></i></h1>
+      <h1 className="app-title">Spacetagram <i className="fas fa-space-shuttle"></i></h1>
       <div className="count-question">
-      <p className="count-question">Please choose the amount of posts to render:</p>
-      <input aria-label='Count' placeholder="25" type="text" className="feed-count" onChange={handleChange}/>
+        <p className="count-question-text">Please choose the amount of posts to render:</p>
+        <input aria-label='post-count' placeholder="25" type="text" className="feed-count" onChange={handleChange}/>
       </div>
       <hr></hr>
-      <Feed APODlist={state.APODlist} count={state.count} />
+      {state.LOADING && <Loader/>}
+      {!state.LOADING && <Feed APODlist={state.APODlist} count={state.count} />}
     </div>
   );
 }
