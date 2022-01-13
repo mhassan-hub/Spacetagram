@@ -1,13 +1,29 @@
 @import "../styles/colors.scss";
 
 .image-card {
+  border-radius: 0.5rem;
   margin: 1rem;
   align-items: center;
-  max-width: 24rem;
-  background-color: $grey;
-  padding: 2rem;
+  max-width: 32rem;
+  background-color: $white;
 }
+.card-title{
+  margin-top: 0;
+  text-align: start;
+  
+}
+// .image-description {
+  
+//   text-align: start;
+// }
 
 .space-image{
-  max-width: 24rem;
+  height: 32rem;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  width: 100%;
+  object-fit: fill;
+}
+
+.image-card-info {
+  padding: 1.5rem;
 }

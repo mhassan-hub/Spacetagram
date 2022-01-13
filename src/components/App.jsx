@@ -40,8 +40,12 @@ function App() {
   console.log("TESTING AXIOS CALL", state);
   return (
     <div className="App">
-      <h1 className="app-title">Spacetagram</h1>
-      <input aria-label='Count' type="text" className="feed-count" onChange={handleChange}/>
+      <h1 className="app-title">Spacetagram <i class="fas fa-space-shuttle"></i></h1>
+      <div className="count-question">
+      <p className="count-question">Please choose the amount of posts to render:</p>
+      <input aria-label='Count' placeholder="25" type="text" className="feed-count" onChange={handleChange}/>
+      </div>
+      <hr></hr>
       <Feed APODlist={state.APODlist} count={state.count} />
     </div>
   );
