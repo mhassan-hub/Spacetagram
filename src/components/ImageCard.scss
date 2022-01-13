@@ -50,3 +50,11 @@ margin: 0;
   flex-grow: 2;
   border-radius: 0 0 0.5rem 0.5rem;
 }
+
+.like-button{
+  border-radius: 1rem;
+  width: 8rem;
+  height: 2rem;
+  font-size: 1rem;
+  background-color: $grey;
+}
