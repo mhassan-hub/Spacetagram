@@ -10,7 +10,7 @@ export default function App() {
   const [count, setCount] = useState(25);
   const [APODlist, setAPODlist] = useState([]);
   const [LOADING, setLOADING] = useState(true);
-  
+
   const url = `https://api.nasa.gov/planetary/apod?&count=${count}&api_key=${process.env.REACT_APP_API_KEY}`;
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function App() {
       });
   }, [count]);
 
-  const handleChange = (event)=>{
+  const handleChange = (event) => {
     const value = Number(event.target.value);
 
     if (value && typeof value === 'number') {
@@ -40,13 +40,13 @@ export default function App() {
 
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar />
       <div className="count-question">
         <p className="count-question-text">Please choose the amount of posts to render:</p>
-        <input aria-label='post-count' placeholder="25" type="text" className="feed-count" onChange={handleChange}/>
+        <input aria-label='post-count' placeholder="25" type="text" className="feed-count" onChange={handleChange} />
       </div>
       <hr></hr>
-      {LOADING && <Loader/>}
+      {LOADING && <Loader />}
       {!LOADING && <Feed APODlist={APODlist} count={count} />}
     </div>
   );

@@ -6,7 +6,7 @@ export default function Loader() {
     <div className="loader-section">
       <div className="loader">
       </div>
-        <h2 className="text">LOADING</h2>
+      <h2 className="text">LOADING</h2>
     </div>
   );
 }
