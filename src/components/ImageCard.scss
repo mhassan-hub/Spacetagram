@@ -26,7 +26,7 @@
 
 .date {
   margin: 0;
-  color: $space-orange;
+  color: $green;
 }
 
 // need to fix description wrap issue
@@ -46,7 +46,7 @@
 
 .image-card-info {
   padding: 1.5rem;
-  border: 0.125rem solid $space-orange;
+  border: 0.125rem solid $green;
   flex-grow: 2;
   border-radius: 0 0 0.5rem 0.5rem;
 }
@@ -56,6 +56,6 @@
   width: 8rem;
   height: 2rem;
   font-size: 1rem;
-  border: 0.125rem solid $space-orange;
+  border: 0.125rem solid $green;
   background-color: white;
 }
