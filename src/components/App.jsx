@@ -1,19 +1,17 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Feed from "./Feed";
-
-import "./App.scss";
 import Loader from "./Loader";
 import Navbar from "./Navbar";
 
-function App() {
-  const [state, setState] = useState({
-    count: 25,
-    APODlist: [],
-    LOADING: true
-  });
+import "./App.scss";
+
+export default function App() {
+  const [count, setCount] = useState(25);
+  const [APODlist, setAPODlist] = useState([]);
+  const [LOADING, setCount] = useState(true);
   
-  const url = `https://api.nasa.gov/planetary/apod?&count=${state.count}&api_key=${process.env.REACT_APP_API_KEY}`;
+  const url = `https://api.nasa.gov/planetary/apod?&count=${count}&api_key=${process.env.REACT_APP_API_KEY}`;
 
   useEffect(() => {
 
@@ -21,29 +19,26 @@ function App() {
       .get(url)
       .then((response) => {
         console.log("response INSIDE", response);
-        setState({
-          ...state,
-          APODlist: response.data,
-          LOADING: false,
-        });
+        setAPODlist(response.data);
+        setCount(response.data.count);
+        setLOADING(false);
       })
       .catch((error) => {
         console.error("There is an error right here", error);
       });
-  }, [state.count]);
+  }, [count]);
 
   const handleChange = (event)=>{
     const value = Number(event.target.value);
 
     if (value && typeof value === 'number') {
-      setState(()=>({...state, count: value, LOADING:true,
-      }))
+      setCount(value);
+      setLOADING(true);
     } else {
       console.error('please add a valid number')
     }
   }
 
-  console.log("TESTING AXIOS CALL", state);
   return (
     <div className="App">
       <Navbar/>
@@ -52,10 +47,8 @@ function App() {
         <input aria-label='post-count' placeholder="25" type="text" className="feed-count" onChange={handleChange}/>
       </div>
       <hr></hr>
-      {state.LOADING && <Loader/>}
-      {!state.LOADING && <Feed APODlist={state.APODlist} count={state.count} />}
+      {LOADING && <Loader/>}
+      {!LOADING && <Feed APODlist={APODlist} count={count} />}
     </div>
   );
 }
-
-export default App;
