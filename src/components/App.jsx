@@ -4,6 +4,7 @@ import Feed from "./Feed";
 
 import "./App.scss";
 import Loader from "./Loader";
+import Navbar from "./Navbar";
 
 function App() {
 
@@ -45,7 +46,7 @@ function App() {
   console.log("TESTING AXIOS CALL", state);
   return (
     <div className="App">
-      <h1 className="app-title">Spacetagram <i className="fas fa-space-shuttle"></i></h1>
+      <Navbar/>
       <div className="count-question">
         <p className="count-question-text">Please choose the amount of posts to render:</p>
         <input aria-label='post-count' placeholder="25" type="text" className="feed-count" onChange={handleChange}/>

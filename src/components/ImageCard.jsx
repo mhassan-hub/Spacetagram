@@ -18,7 +18,7 @@ export default function ImageCard({title, url, explanation, date}) {
     <p className="image-explanation">{explanation}</p>
     <button
       className="like-button"
-      >Like</button>
+      ><i className="far fa-thumbs-up"></i>  Like</button>
       </div>
   </div>);
 }
