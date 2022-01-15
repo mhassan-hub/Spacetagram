@@ -25,14 +25,13 @@ margin: 0;
 
 .date{
   margin: 0;
-  color: $grey;
+  color: $space-orange;
 }
 
 // need to fix description wrap issue
 .image-explanation {
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: normal;
   text-align: start;
   height: 9rem;
 }
@@ -46,7 +45,7 @@ margin: 0;
 
 .image-card-info {
   padding: 1.5rem;
-  border: 2px solid red;
+  border: 2px solid $space-orange;
   flex-grow: 2;
   border-radius: 0 0 0.5rem 0.5rem;
 }
@@ -56,5 +55,6 @@ margin: 0;
   width: 8rem;
   height: 2rem;
   font-size: 1rem;
-  background-color: $grey;
+  border: 0.25rem solid white;
+  background-color: $space-orange;
 }

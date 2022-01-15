@@ -7,12 +7,12 @@ import Loader from "./Loader";
 import Navbar from "./Navbar";
 
 function App() {
-
   const [state, setState] = useState({
     count: 25,
     APODlist: [],
     LOADING: true
   });
+  
   const url = `https://api.nasa.gov/planetary/apod?&count=${state.count}&api_key=${process.env.REACT_APP_API_KEY}`;
 
   useEffect(() => {
