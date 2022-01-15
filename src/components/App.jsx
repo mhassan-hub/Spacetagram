@@ -9,7 +9,7 @@ import "./App.scss";
 export default function App() {
   const [count, setCount] = useState(25);
   const [APODlist, setAPODlist] = useState([]);
-  const [LOADING, setCount] = useState(true);
+  const [LOADING, setLOADING] = useState(true);
   
   const url = `https://api.nasa.gov/planetary/apod?&count=${count}&api_key=${process.env.REACT_APP_API_KEY}`;
 
@@ -20,7 +20,6 @@ export default function App() {
       .then((response) => {
         console.log("response INSIDE", response);
         setAPODlist(response.data);
-        setCount(response.data.count);
         setLOADING(false);
       })
       .catch((error) => {
