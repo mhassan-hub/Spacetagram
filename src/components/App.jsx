@@ -7,7 +7,7 @@ import Navbar from './Navbar/Navbar';
 import './App.scss';
 
 export default function App() {
-  const [count, setCount] = useState(25);
+  const [count, setCount] = useState(10);
   const [apodList, setApodList] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -41,10 +41,15 @@ export default function App() {
     <div className="App">
       <Navbar />
       <div className="count-question">
-        <p className="count-question-text">Please choose the amount of posts to render:</p>
-        <input aria-label="post-count" placeholder="25" type="text" className="feed-count" onChange={handleChange} />
+        <label>
+          Number of posts:
+          <select value={count} className="feed-count" onChange={handleChange} aria-label="post-count">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+          </select>
+        </label>
       </div>
-      <hr />
       {loading && <Loader />}
       {!loading && <Feed apodList={apodList} count={count} />}
     </div>
