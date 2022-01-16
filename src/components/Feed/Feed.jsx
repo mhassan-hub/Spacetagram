@@ -1,12 +1,12 @@
 import { React } from 'react';
-import ImageCard from './ImageCard';
+import ImageCard from '../ImageCard/ImageCard';
 
 import './Feed.scss';
 
-export default function Feed({ APODlist }) {
-  console.log('OUTSIDE RESPONSE - INSIDE FEED COMPONENT', APODlist);
+export default function Feed({ apodList }) {
+  console.log('OUTSIDE RESPONSE - INSIDE FEED COMPONENT', apodList);
 
-  const list = APODlist.map((element, index) => {
+  const list = apodList.map((element, index) => {
     return (
       <ImageCard
         key={index}

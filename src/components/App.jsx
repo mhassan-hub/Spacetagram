@@ -1,15 +1,15 @@
 import { useState, useEffect, React } from 'react';
 import axios from 'axios';
-import Feed from './Feed';
-import Loader from './Loader';
-import Navbar from './Navbar';
+import Feed from './Feed/Feed';
+import Loader from './Loader/Loader';
+import Navbar from './Navbar/Navbar';
 
 import './App.scss';
 
 export default function App() {
   const [count, setCount] = useState(25);
-  const [APODlist, setAPODlist] = useState([]);
-  const [LOADING, setLOADING] = useState(true);
+  const [apodList, setApodList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const url = `https://api.nasa.gov/planetary/apod?&count=${count}&api_key=${process.env.REACT_APP_API_KEY}`;
 
@@ -18,8 +18,8 @@ export default function App() {
       .get(url)
       .then((response) => {
         console.log('response INSIDE', response);
-        setAPODlist(response.data);
-        setLOADING(false);
+        setApodList(response.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error('There is an error right here', error);
@@ -31,7 +31,7 @@ export default function App() {
 
     if (value && typeof value === 'number') {
       setCount(value);
-      setLOADING(true);
+      setLoading(true);
     } else {
       console.error('please add a valid number');
     }
@@ -45,8 +45,8 @@ export default function App() {
         <input aria-label="post-count" placeholder="25" type="text" className="feed-count" onChange={handleChange} />
       </div>
       <hr />
-      {LOADING && <Loader />}
-      {!LOADING && <Feed APODlist={APODlist} count={count} />}
+      {loading && <Loader />}
+      {!loading && <Feed apodList={apodList} count={count} />}
     </div>
   );
 }
