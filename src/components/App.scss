@@ -1,10 +1,15 @@
 .count-question {
   display: flex;
-  justify-content: flex-end;
+  margin-left: 1rem;
 }
 
 .feed-count {
+  font-size: 1rem;
   margin: 0.75rem;
   text-align: center;
-  max-width: 2rem;
+  width: 3.5rem;
+}
+
+.count-label {
+  font-size: 1.25rem;
 }

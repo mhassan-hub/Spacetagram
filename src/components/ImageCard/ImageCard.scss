@@ -3,10 +3,9 @@
 .image-card {
   display: flex;
   flex-direction: column;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   margin: 1rem;
   align-items: center;
-  height: 50rem;
   max-width: 32rem;
   background-color: $white;
 }
@@ -30,17 +29,15 @@
   font-weight: bold;
 }
 
-// need to fix description wrap issue
 .image-explanation {
-  text-overflow: ellipsis;
-  overflow: hidden;
   text-align: start;
-  height: 9rem;
 }
 
 .space-image {
-  height: 32rem;
-  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  height: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  border-radius: 0.75rem 0.75rem 0rem 0rem;
   width: 100%;
   object-fit: fill;
 }
@@ -51,8 +48,9 @@
   align-items: center;
   padding: 1.5rem;
   border: 0.2rem solid $green;
-  flex-grow: 2;
-  border-radius: 0 0 0.5rem 0.5rem;
+  border-top: 0;
+
+  border-radius: 0 0 0.75rem 0.75rem;
 }
 
 .like-button {

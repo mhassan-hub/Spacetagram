@@ -1,8 +1,3 @@
-$dark: #222f3e;
-$darkLower: #22303f8c;
-$grey: #8395a7;
-$white: #fff;
-$primary: #54a0ff;
 @import '../../styles/colors.scss';
 
 .like-button-wrapper {
@@ -11,9 +6,9 @@ $primary: #54a0ff;
   place-items: center;
   border: none;
   cursor: pointer;
-  padding: 16px 24px;
+  padding: 0.75rem 3rem 0.325rem 2.5rem;
 
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   background-color: transparent;
 
@@ -29,8 +24,8 @@ $primary: #54a0ff;
     transition: background-color 0.3s, transform 0.3s;
     border: 0.2rem solid $green;
     background-color: white;
-    box-shadow: 0 0 0.75rem $darkLower;
-    border-radius: 0.5rem;
+    box-shadow: 0 0 0.75rem #22303f8c;
+    border-radius: 0.75rem;
   }
 
   &:hover:not(.liked) {
@@ -38,7 +33,7 @@ $primary: #54a0ff;
       transform: translateY(-2px) rotate(8deg);
 
       #thumb-end {
-        transform: rotate(45deg) translate(5px, -45px);
+        transform: rotate(45deg) translate(0.325rem, -2.812rem);
       }
     }
   }
@@ -62,10 +57,8 @@ $primary: #54a0ff;
   }
 
   .like-button {
-    display: flex;
-    align-items: center;
     z-index: 1;
-    transform: translateX(3px);
+    transform: translateX(0.187rem);
   }
 
   .particles {
@@ -132,20 +125,20 @@ $primary: #54a0ff;
     .particle-tick {
       position: absolute;
       z-index: -1;
-      width: 10px;
-      height: 1px;
+      width: 0.625rem;
+      height: 0.06rem;
       background-color: $white;
       color: black;
       animation: boom 500ms;
-      transform: translateX(-25px);
+      transform: translateX(-1.56rem);
     }
   }
 
   i {
-    width: 22px;
-    height: 22px;
-    margin-right: 8px;
-    transform: translateY(-2px);
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.75rem;
+    transform: translateY(-0.12rem);
     transition: transform 0.2s;
 
     #thumb-end {
@@ -156,7 +149,7 @@ $primary: #54a0ff;
   .suffix {
     opacity: 0;
     transition: opacity 300ms, transform 300ms;
-    transform: translateX(15px);
+    transform: translateX(1rem);
 
     &.liked {
       opacity: 1;
@@ -167,19 +160,19 @@ $primary: #54a0ff;
 
 @keyframes hop {
   0% {
-    transform: rotate(8deg) translateY(-2px);
+    transform: rotate(8deg) translateY(-0.125rem);
   }
 
   30% {
-    transform: rotate(-14deg) translateY(-5px);
+    transform: rotate(-14deg) translateY(-0.375rem);
   }
 
   65% {
-    transform: rotate(7deg) translateY(2px);
+    transform: rotate(7deg) translateY(0.125rem);
   }
 
   100% {
-    transform: rotate(0deg) translateY(-2px);
+    transform: rotate(0deg) translateY(-0.125rem);
   }
 }
 
@@ -199,12 +192,12 @@ $primary: #54a0ff;
 
 @keyframes boom {
   0% {
-    transform: translateX(-25px);
+    transform: translateX(-1.5rem);
     opacity: 1;
   }
 
   100% {
-    transform: translateX(50px);
+    transform: translateX(3rem);
     opacity: 0;
   }
 }

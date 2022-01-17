@@ -28,20 +28,15 @@ export default function App() {
 
   const handleChange = (event) => {
     const value = Number(event.target.value);
-
-    if (value && typeof value === 'number') {
-      setCount(value);
-      setLoading(true);
-    } else {
-      console.error('please add a valid number');
-    }
+    setCount(value);
+    setLoading(true);
   };
 
   return (
     <div className="App" aria-label="main">
       <Navbar aria-label="nav" />
       <div className="count-question">
-        <label>
+        <label className="count-label">
           Number of posts:
           <select value={count} className="feed-count" onChange={handleChange} aria-label="post number">
             <option value="10" aria-label="10">10</option>

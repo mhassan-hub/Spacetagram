@@ -7,8 +7,8 @@ export default function Navbar() {
     <div className="nav-bar">
       <h1 className="app-title" aria-label="title">
         SPACETAGRAM
-        <i className="fas fa-space-shuttle" />
       </h1>
+      <i className="icon fas fa-space-shuttle" />
     </div>
   );
 }

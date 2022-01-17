@@ -22,7 +22,7 @@ const LikeButton = () => {
       })}
     >
       <div className="like-button">
-        {/* <i className="far fa-thumbs-up" /> */}
+        <i className="far fa-thumbs-up" />
         <span>Like</span>
         <span className={cn("suffix", { liked })}>d</span>
       </div>
