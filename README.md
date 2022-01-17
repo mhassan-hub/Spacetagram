@@ -2,6 +2,9 @@
 
   Spacetagram is an app to help share photos from NASA’s Astronaut Picture of the Day(APOD) image API. You can checkout the live demo [here](https://spacetagramy.netlify.app/). 
   
+## Accessability
+### Heading Structure
+  For accessability 
 
 ## Likes
 
