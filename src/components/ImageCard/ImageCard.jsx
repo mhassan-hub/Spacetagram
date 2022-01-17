@@ -4,17 +4,6 @@ import './ImageCard.scss';
 
 export default function ImageCard({ title, url, explanation, date }) {
 
-  // useEffect(() => {
-  //   console.log('in the use effect');
-  //   axios.post(
-  //     process.env.AWS_POST_URL,
-  //     { userid: `a`, likes: likes }
-  //   )
-  //     .then(response => {
-  //       console.log(response.request.responseText);
-  //     }).catch(error => console.log(error));
-  // }, [likes])
-
   return (
     <div className="image-card" aria-label="image card">
       <img className="space-image" alt="" src={url} />
@@ -26,7 +15,10 @@ export default function ImageCard({ title, url, explanation, date }) {
           <p className="date">{date}</p>
         </div>
         <p className="image-explanation">{explanation}</p>
-        <LikeButton className="like-button" />
+        <div className="card-footer">
+          <LikeButton url={url} className="copy-link" />
+          <LikeButton likeButton={true} className="like-button" />
+        </div>
       </div>
     </div>
   );

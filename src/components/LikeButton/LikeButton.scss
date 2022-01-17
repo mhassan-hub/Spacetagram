@@ -6,8 +6,7 @@
   place-items: center;
   border: none;
   cursor: pointer;
-  padding: 0.75rem 3rem 0.325rem 2.5rem;
-
+  padding: 0.75rem 3rem 0.75rem 2.5rem;
   font-size: 1rem;
   font-weight: 600;
   background-color: transparent;
@@ -24,13 +23,13 @@
     transition: background-color 0.3s, transform 0.3s;
     border: 0.2rem solid $green;
     background-color: white;
-    box-shadow: 0 0 0.75rem #22303f8c;
+    box-shadow: 0 0 0.75rem $shadow;
     border-radius: 0.75rem;
   }
 
   &:hover:not(.liked) {
     i {
-      transform: translateY(-2px) rotate(8deg);
+      transform: translateY(-0.2rem) rotate(10deg);
 
       #thumb-end {
         transform: rotate(45deg) translate(0.325rem, -2.812rem);
@@ -56,87 +55,14 @@
     }
   }
 
-  .like-button {
+  .button-content {
+    display: flex;
+    align-items: center;
     z-index: 1;
-    transform: translateX(0.187rem);
-  }
-
-  .particles {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-
-    .particle-rotate {
-      position: absolute;
-
-      &:nth-child(1) {
-        right: 0;
-        top: 50%;
-      }
-
-      &:nth-child(2) {
-        right: 0;
-        bottom: 0;
-      }
-
-      &:nth-child(3) {
-        right: 33%;
-        bottom: 0;
-      }
-
-      &:nth-child(4) {
-        right: 66%;
-        bottom: 0;
-      }
-
-      &:nth-child(5) {
-        left: 0;
-        bottom: 0;
-      }
-
-      &:nth-child(6) {
-        left: 0;
-        bottom: 50%;
-      }
-
-      &:nth-child(7) {
-        left: 0;
-        top: 0;
-      }
-
-      &:nth-child(8) {
-        left: 33%;
-        top: 0;
-      }
-
-      &:nth-child(9) {
-        left: 66%;
-        top: 0;
-      }
-
-      &:nth-child(10) {
-        right: 0;
-        top: 0;
-      }
-    }
-
-    .particle-tick {
-      position: absolute;
-      z-index: -1;
-      width: 0.625rem;
-      height: 0.06rem;
-      background-color: $white;
-      color: black;
-      animation: boom 500ms;
-      transform: translateX(-1.56rem);
-    }
+    transform: translateX(0.3rem);
   }
 
   i {
-    width: 1.5rem;
-    height: 1.5rem;
     margin-right: 0.75rem;
     transform: translateY(-0.12rem);
     transition: transform 0.2s;

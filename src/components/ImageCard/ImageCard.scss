@@ -8,6 +8,7 @@
   align-items: center;
   max-width: 32rem;
   background-color: $white;
+  box-shadow: 0 0 0.75rem $shadow;
 }
 
 .title-section {
@@ -22,6 +23,7 @@
   margin: 0;
   font-size: 1rem;
   text-align: start;
+  max-width: 20rem;
 }
 
 .date {
@@ -51,6 +53,12 @@
   border-top: 0;
 
   border-radius: 0 0 0.75rem 0.75rem;
+}
+
+.card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .like-button {
