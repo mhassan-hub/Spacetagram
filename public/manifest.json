@@ -1,6 +1,5 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Explore Space through Nasa's eyes",
   "icons": [
     {
       "src": "favicon.ico",

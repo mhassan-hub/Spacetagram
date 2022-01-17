@@ -38,20 +38,20 @@ export default function App() {
   };
 
   return (
-    <div className="App">
-      <Navbar />
+    <div className="App" aria-label="main">
+      <Navbar aria-label="nav" />
       <div className="count-question">
         <label>
           Number of posts:
-          <select value={count} className="feed-count" onChange={handleChange} aria-label="post-count">
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
+          <select value={count} className="feed-count" onChange={handleChange} aria-label="post number">
+            <option value="10" aria-label="10">10</option>
+            <option value="25" aria-label="25">25</option>
+            <option value="50" aria-label="50">50</option>
           </select>
         </label>
       </div>
       {loading && <Loader />}
-      {!loading && <Feed apodList={apodList} count={count} />}
+      {!loading && <Feed aria-label="main-feed" apodList={apodList} count={count} />}
     </div>
   );
 }

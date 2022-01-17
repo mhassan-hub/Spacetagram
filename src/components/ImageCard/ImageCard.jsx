@@ -16,7 +16,7 @@ export default function ImageCard({ title, url, explanation, date }) {
   // }, [likes])
 
   return (
-    <div className="image-card">
+    <div className="image-card" aria-label="image card">
       <img className="space-image" alt="" src={url} />
       <div className="image-card-info">
         <div className="title-section">
@@ -26,7 +26,7 @@ export default function ImageCard({ title, url, explanation, date }) {
           <p className="date">{date}</p>
         </div>
         <p className="image-explanation">{explanation}</p>
-        <LikeButton />
+        <LikeButton className="like-button" />
       </div>
     </div>
   );
