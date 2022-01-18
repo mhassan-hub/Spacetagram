@@ -4,7 +4,6 @@ import ImageCard from '../ImageCard/ImageCard';
 import './Feed.scss';
 
 export default function Feed({ apodList }) {
-  console.log('OUTSIDE RESPONSE - INSIDE FEED COMPONENT', apodList);
 
   const list = apodList.map((element, index) => {
     return (

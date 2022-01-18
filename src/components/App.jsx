@@ -17,7 +17,6 @@ export default function App() {
     axios
       .get(url)
       .then((response) => {
-        console.log('response INSIDE', response);
         setApodList(response.data);
         setLoading(false);
       })
