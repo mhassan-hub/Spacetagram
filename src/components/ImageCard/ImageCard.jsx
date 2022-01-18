@@ -1,5 +1,6 @@
 import React from 'react';
 import AnimatedButton from '../AnimatedButton/AnimatedButton';
+import Text from '../Text/Text'
 import './ImageCard.scss';
 
 export default function ImageCard({ title, url, explanation, date }) {
@@ -14,10 +15,10 @@ export default function ImageCard({ title, url, explanation, date }) {
           </h2>
           <p className="date">{date}</p>
         </div>
-        <p className="image-explanation">{explanation}</p>
+        <Text text={explanation} />
         <div className="card-footer">
-          <AnimatedButton url={url} className="copy-link" />
-          <AnimatedButton likeButton={true} className="like-button" />
+          <AnimatedButton aria-label="Copy Link Button" url={url} className="copy-link" />
+          <AnimatedButton aria-label="Like Button" likeButton={true} className="like-button" />
         </div>
       </div>
     </div>

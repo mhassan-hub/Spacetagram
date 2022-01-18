@@ -15,7 +15,6 @@ export default function AnimatedButton({ likeButton, url }) {
   return (
     <button
       data-testid="like-button"
-      aria-label="like-button"
       onClick={handleClick}
       onAnimationEnd={() => setClicked(false)}
       className={cn("like-button-wrapper", {
@@ -24,13 +23,14 @@ export default function AnimatedButton({ likeButton, url }) {
       })}
     >
       {likeButton &&
-        <div className="button-content">
+        <div aria-label="Like Button" className="button-content">
           <i className="far fa-thumbs-up" />
           <span>Like</span>
           <span className={cn("suffix", { liked })}>d</span>
         </div>}
       {!likeButton &&
-        <div className="button-content">
+
+        <div aria-label="Copy Link Button" className="button-content">
           <i className="far fa-copy"></i>
           <span>Copy URL</span>
         </div>}
