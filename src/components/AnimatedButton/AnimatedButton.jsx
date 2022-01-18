@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import cn from "classnames";
 
-import "./LikeButton.scss";
+import "./AnimatedButton.scss";
 
-const LikeButton = ({ likeButton, url }) => {
+export default function AnimatedButton({ likeButton, url }) {
   const [liked, setLiked] = useState(null);
   const [clicked, setClicked] = useState(false);
 
@@ -34,10 +34,6 @@ const LikeButton = ({ likeButton, url }) => {
           <i className="far fa-copy"></i>
           <span>Copy URL</span>
         </div>}
-
-
     </button >
   );
-};
-
-export default LikeButton;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import LikeButton from '../LikeButton/LikeButton';
+import AnimatedButton from '../AnimatedButton/AnimatedButton';
 import './ImageCard.scss';
 
 export default function ImageCard({ title, url, explanation, date }) {
@@ -16,8 +16,8 @@ export default function ImageCard({ title, url, explanation, date }) {
         </div>
         <p className="image-explanation">{explanation}</p>
         <div className="card-footer">
-          <LikeButton url={url} className="copy-link" />
-          <LikeButton likeButton={true} className="like-button" />
+          <AnimatedButton url={url} className="copy-link" />
+          <AnimatedButton likeButton={true} className="like-button" />
         </div>
       </div>
     </div>
