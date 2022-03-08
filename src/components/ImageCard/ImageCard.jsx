@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AnimatedButton from '../AnimatedButton/AnimatedButton';
 import Text from '../Text/Text'
 import './ImageCard.scss';
 
 export default function ImageCard({ title, url, explanation, date }) {
+  const [showCopyBanner, setShowCopyBanner] = useState(false);
 
   return (
     <div className="image-card" aria-label="image card">
@@ -17,9 +18,12 @@ export default function ImageCard({ title, url, explanation, date }) {
         </div>
         <Text text={explanation} />
         <div className="card-footer">
-          <AnimatedButton aria-label="Copy Link Button" url={url} className="copy-link" />
-          <AnimatedButton aria-label="Like Button" likeButton={true} className="like-button" />
+          <AnimatedButton aria-label="Copy Link Button" className="copy-link" setShowCopyBanner={setShowCopyBanner} url={url} />
+          <AnimatedButton aria-label="Like Button" className="like-button" title={title} likeButton={true} url={url} />
         </div>
+        {showCopyBanner && <div className="copy-banner">
+          <p className="copy-banner-text">Link has been copied successfully!</p>
+        </div>}
       </div>
     </div>
   );

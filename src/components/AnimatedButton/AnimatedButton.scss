@@ -1,8 +1,9 @@
 @import '../../styles/colors.scss';
 
-.like-button-wrapper {
+.like-button,
+.copy-button {
   position: relative;
-  display: grid;
+  display: flex;
   place-items: center;
   border: none;
   cursor: pointer;
@@ -59,7 +60,6 @@
     display: flex;
     align-items: center;
     z-index: 1;
-    transform: translateX(0.3rem);
   }
 
   i {
@@ -125,5 +125,14 @@
   100% {
     transform: translateX(3rem);
     opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  .like-button,
+  .copy-button {
+    width: 8rem;
+    padding: 0.75rem 1.5rem 0.75rem 1.5rem;
   }
 }

@@ -3,21 +3,31 @@ import cn from "classnames";
 
 import "./AnimatedButton.scss";
 
-export default function AnimatedButton({ likeButton, url }) {
+export default function AnimatedButton({ likeButton, url, setShowCopyBanner, title }) {
   const [liked, setLiked] = useState(null);
   const [clicked, setClicked] = useState(false);
-
+  const buttonClassName = likeButton ? "like-button" : "copy-button";
+  const testId = likeButton ? "like-button" : "copy-button";
   const handleClick = () => {
     setClicked(true);
+
+    if (!likeButton) {
+      navigator.clipboard.writeText(url)
+      setShowCopyBanner(true);
+      setTimeout(() => {
+        setShowCopyBanner(false);
+      }, 3000);
+    }
+
     setLiked(!liked);
-    if (!likeButton) { navigator.clipboard.writeText(url) }
   }
+
   return (
     <button
-      data-testid="like-button"
+      data-testid={testId}
       onClick={handleClick}
       onAnimationEnd={() => setClicked(false)}
-      className={cn("like-button-wrapper", {
+      className={cn(buttonClassName, {
         liked,
         clicked,
       })}
@@ -28,8 +38,8 @@ export default function AnimatedButton({ likeButton, url }) {
           <span>Like</span>
           <span className={cn("suffix", { liked })}>d</span>
         </div>}
-      {!likeButton &&
 
+      {!likeButton &&
         <div aria-label="Copy Link Button" className="button-content">
           <i className="far fa-copy"></i>
           <span>Copy URL</span>
