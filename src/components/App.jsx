@@ -33,7 +33,7 @@ export default function App() {
 
   return (
     <div className="App" aria-label="main">
-      <Navbar aria-label="nav" />
+      <Navbar data-testid="nav" aria-label="nav" />
       <div className="count-question">
         <label className="count-label">
           Number of posts:

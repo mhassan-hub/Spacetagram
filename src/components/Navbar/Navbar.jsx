@@ -5,10 +5,10 @@ import './Navbar.scss';
 export default function Navbar() {
   return (
     <div className="nav-bar">
-      <h1 className="app-title" aria-label="title">
+      <h1 data-testid="app-title" className="app-title" aria-label="title">
         SPACETAGRAM
       </h1>
-      <i className="icon fas fa-space-shuttle" />
+      <i data-testid="title-icon" className="icon fas fa-space-shuttle" />
     </div>
   );
 }
