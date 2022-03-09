@@ -18,7 +18,7 @@ export default function Feed({ apodList }) {
   });
 
   return (
-    <ul className="home-feed">
+    <ul data-testid="image-card-list" className="home-feed">
       {list}
     </ul>
   );
