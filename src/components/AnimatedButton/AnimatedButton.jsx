@@ -8,6 +8,7 @@ export default function AnimatedButton({ likeButton, url, setShowCopyBanner, tit
   const [clicked, setClicked] = useState(false);
   const buttonClassName = likeButton ? "like-button" : "copy-button";
   const testId = likeButton ? "like-button" : "copy-button";
+
   const handleClick = () => {
     setClicked(true);
 
@@ -20,6 +21,10 @@ export default function AnimatedButton({ likeButton, url, setShowCopyBanner, tit
     }
 
     setLiked(!liked);
+    if (!localStorage.getItem(title)) {
+      return localStorage.setItem(title, url)
+    }
+    localStorage.removeItem(title)
   }
 
   return (
