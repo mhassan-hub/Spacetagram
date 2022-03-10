@@ -3,7 +3,7 @@ import cn from "classnames";
 
 import "./AnimatedButton.scss";
 
-export default function AnimatedButton({ likeButton, url, setShowCopyBanner, title }) {
+export default function AnimatedButton({ likeButton, setShowCopyBanner, cardInfo }) {
   const [liked, setLiked] = useState(null);
   const [clicked, setClicked] = useState(false);
   const buttonClassName = likeButton ? "like-button" : "copy-button";
@@ -13,7 +13,7 @@ export default function AnimatedButton({ likeButton, url, setShowCopyBanner, tit
     setClicked(true);
 
     if (!likeButton) {
-      navigator.clipboard.writeText(url)
+      navigator.clipboard.writeText(cardInfo.url)
       setShowCopyBanner(true);
       setTimeout(() => {
         setShowCopyBanner(false);
@@ -21,10 +21,10 @@ export default function AnimatedButton({ likeButton, url, setShowCopyBanner, tit
     }
 
     setLiked(!liked);
-    if (!localStorage.getItem(title)) {
-      return localStorage.setItem(title, url)
+    if (!localStorage.getItem(cardInfo.title)) {
+      return localStorage.setItem(cardInfo.title, JSON.stringify(cardInfo))
     }
-    localStorage.removeItem(title)
+    localStorage.removeItem(cardInfo.title)
   }
 
   return (

@@ -9,10 +9,7 @@ export default function Feed({ apodList }) {
     return (
       <ImageCard
         key={index}
-        date={element.date}
-        title={element.title}
-        url={element.url}
-        explanation={element.explanation}
+        cardInfo={element}
       />
     );
   });
