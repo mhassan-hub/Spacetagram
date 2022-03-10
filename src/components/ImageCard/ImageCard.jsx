@@ -7,7 +7,7 @@ export default function ImageCard({ title, url, explanation, date }) {
   const [showCopyBanner, setShowCopyBanner] = useState(false);
 
   return (
-    <div className="image-card" aria-label="image card">
+    <div data-testid="image-card" className="image-card" aria-label="image card">
       <img className="space-image" alt="" src={url} />
       <div className="image-card-info">
         <div className="title-section">
