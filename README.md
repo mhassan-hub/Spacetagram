@@ -33,7 +33,7 @@ To accommodate screen readers further, I included Aria labels for all interactiv
 
   <p float="left">
   <p>How a liked button looks:</p>
-  <img src="public/Liked.png" width="50%" height="50%" />
+  <img src="public/liked.png" width="50%" height="50%" />
   <p>How an regular un-liked button looks:</p>
   <img src="public/notLiked.png" width="50%" height="50%"/> 
 </p>
