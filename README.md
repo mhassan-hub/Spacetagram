@@ -1,7 +1,7 @@
 # Welcome to Spacetagram
 
 
-  Spacetagram is an app to help share incredible photos from NASA’s Astronaut Picture of the Day(APOD) image API. You can checkout the live demo [here](https://spacetagramy.netlify.app/). 
+  Spacetagram is an app to help share incredible photos from NASA’s Astronaut Picture of the Day(APOD) image API. You can checkout the live website [here](https://spacetagramy.netlify.app/). 
   
 
 ## Accessability
@@ -38,7 +38,7 @@ To accommodate screen readers further, I included Aria labels for all interactiv
   <img src="public/notLiked.png" width="50%" height="50%"/> 
 </p>
 
-  Shareable links can be found on the "share" button on the bottom of the post card.
+  Shareable image links can be found on the "Copy URL" button on the bottom of the image card.
 
 ## Post Count
 
@@ -55,5 +55,7 @@ Count Selection:
 ## Future Improvements
 
 A future improvement that I am planning on doing is setup AWS so Spacetagram can be serverless. 
+
+This would improve the like feature as a user would be able to store their likes in a more secure and consistent manner.
 
 AWS includes services like DynamoDB as a database, using Lambda's to automatically trigger functions and API Gateway to set up API endpoints to link between the two.
